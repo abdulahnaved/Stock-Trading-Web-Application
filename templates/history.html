@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>  <!-- Changed "Share" to "Shares" for consistency -->
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in transactions %}
+            <tr>
+                <td>{{ row["symbol"] }}</td>  <!-- Fixed the missing closing bracket here -->
+                <td>{{ row["shares"] }}</td>  <!-- Fixed the missing closing bracket here -->
+                <td>{{ row["price"] }}</td>
+                <td>{{ row["date"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

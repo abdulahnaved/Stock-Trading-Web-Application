@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>  <!-- Changed "Share" to "Shares" for consistency -->
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for row in database %}
+            <tr>
+                <td>{{ row["symbol"] }}</td>  <!-- Fixed the missing closing bracket here -->
+                <td>{{ row["shares"] }}</td>  <!-- Fixed the missing closing bracket here -->
+                <td>{{ row["price"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
